@@ -1,4 +1,4 @@
-package com.mcommerceactivite.model;
+package com.mcommerceactivite.microservice_expedition.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

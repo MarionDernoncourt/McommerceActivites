@@ -1,7 +1,8 @@
-package com.mcommerceactivite.microservice_expedition.web;
+package com.mcommerceactivite.microservice_expedition.web.controller;
 
 import com.mcommerceactivite.microservice_expedition.dao.ExpeditionDao;
 import com.mcommerceactivite.microservice_expedition.model.Expedition;
+import com.mcommerceactivite.microservice_expedition.web.exception.ExpeditionNotFoundException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -40,5 +41,10 @@ public class ExpeditionController {
         }
         return expedition;
 
+    }
+
+    @PutMapping("/expeditions/{id}")
+    public void updateExpedition(@PathVariable int id, @RequestBody Expedition expedition) {
+        expeditionDao.save(expedition);
     }
 }
